@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>chat online</title>
+</head>
+
+<body>
+    <div id="chatbox" style="height: 300px; overflow-y: scroll;"></div>
+    <input type="text" id="message" placeholder="typing message" onkeydown="handleKeyDown(event)" />
+    <button onclick="sendMessage()">send</button>
+
+    <script>
+        var ws = new WebSocket("ws://localhost:8080/ws");
+
+        ws.onmessage = function (event) {
+            var message = event.data;
+            var chatbox = document.getElementById("chatbox");
+            chatbox.innerHTML += message + "<br/>";
+
+            setTimeout(function () {
+                messageElement.remove();
+            }, 5000);
+        };
+
+        function handleKeyDown(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                sendMessage();
+            }
+        }
+
+        function sendMessage() {
+            var messageInput = document.getElementById("message");
+            var message = messageInput.value;
+            ws.send(message);
+            messageInput.value = "";
+        }
+    </script>
+</body>
+
+</html>
