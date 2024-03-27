@@ -1,0 +1,19 @@
+# github.com/ebitengine/purego v0.6.0-alpha.1.0.20231122024802-192c5e846faa
+## explicit; go 1.18
+github.com/ebitengine/purego
+github.com/ebitengine/purego/internal/cgo
+github.com/ebitengine/purego/internal/fakecgo
+github.com/ebitengine/purego/internal/strings
+# github.com/gen2brain/raylib-go/raylib v0.0.0-20240227114648-c3665eb9abf8
+## explicit; go 1.21
+github.com/gen2brain/raylib-go/raylib
+# github.com/gorilla/websocket v1.5.1
+## explicit; go 1.20
+github.com/gorilla/websocket
+# golang.org/x/net v0.17.0
+## explicit; go 1.17
+golang.org/x/net/internal/socks
+golang.org/x/net/proxy
+# golang.org/x/sys v0.14.0
+## explicit; go 1.18
+golang.org/x/sys/windows
